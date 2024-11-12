@@ -264,8 +264,9 @@ footer {
 }
 
 .name2 {
+    display: none;
     position: relative;
-    left: -260px;
+    left: -265px;
     bottom: 55px;
     font-size: 1.3rem;
     letter-spacing: 0.2px;
@@ -359,5 +360,279 @@ footer {
     .contact-link {
         font-size: 1.4rem;
     }
+
+    .name2 {
+        display: inline;
+    }
 }
 
+@media  screen and (max-width: 700px) {
+    .description {
+        width: 500px;
+        min-height: 450px;
+        border-radius: 5px;
+        padding: 10px 15px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .des-title {
+        text-align: center;
+        margin-bottom: 12px;
+        font-size: 2rem;
+    }
+
+    .des-text {
+        font-size: 0.95rem;
+        letter-spacing: 0.2px;
+        margin-bottom: 8px;
+        line-height: 22px;
+    }
+
+    .des-text img {
+        width: 260px;
+        height: 195px;
+        float: left;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+
+    .top-link, .contact-link {
+        font-size: 1.4rem;
+    }
+
+    .name2 {
+        position: relative;
+        left: 15px;
+        bottom: 115px;
+        font-size: 1.1rem;
+        letter-spacing: 0.2px;
+        text-shadow: 0 1px 2px #d1d1d1;
+    }
+
+    header {
+        height: auto;
+    }
+
+    .about-me {
+       min-height: 500px;
+       padding: 40px 20px;
+    }
+
+    .work-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        letter-spacing: 0.6px;
+    }
+
+    main {
+        padding: 15px 40px;
+    }
+
+    .projects {
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .pro-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.4px;
+    }
+
+    .pro-link {
+        font-size: 1.3rem;
+        transition: all 0.3s;
+    }
+
+    .pro-link img {
+        width: 25px;
+        height: 25px;
+        transform: translate(0, 2px);
+    }
+
+    .pro-top {
+        margin: 5px 20px 15px 20px;
+    }
+
+    .project-text {
+        font-size: 0.9rem;
+    }
+
+    .image2 {
+        max-width: 350px;
+    }
+
+    .contact-title {
+        font-size: 1.8rem;
+        letter-spacing: 0.4px;
+    }
+
+    .contact-text p {
+        font-size: 0.65rem;
+        letter-spacing: 0.2px;
+        margin-bottom: 7px;
+        line-height: 18px;
+        max-width: 250px;
+    }
+
+    .fa-phone, .fa-envelope {
+        font-size: 1rem;
+        transform: translate(0, -2.5px);
+    }
+
+    .contact-link {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .des-text img {
+        display: none;
+    }
+
+    .name2 {
+        display: none;
+    }
+
+    .description {
+        max-width: 380px;
+        min-height: 460px;
+        border-radius: 5px;
+        padding: 10px 25px;
+        justify-content: unset;
+        gap: 0px;
+    }
+
+    .des-text {
+        font-size: 1.1rem;
+        letter-spacing: 0.3px;
+        margin-bottom: 15px;
+        line-height: 25px;
+    }
+
+    .des-title {
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 2rem;
+    }
+
+    .top-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .top-link {
+        font-size: 1.6rem;
+    }
+
+    .profile-pic {
+        display: inline;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .profile-pic {
+        width: 90%;
+    }
+    header {
+        background: linear-gradient(345deg, #f1f0ed 70%,  #0b98b8 10%);
+    }
+
+    .name {
+        transform: translate(15px, -110px);
+        font-size: 3rem;
+        line-height: 52px;
+        max-width: 100px;
+    }
+
+    .contact {
+        flex-direction: column;
+        padding: 30px 0 0 0;
+    }
+
+    .image2 {
+        max-width: 100%;
+    }
+
+    .image1 {
+        min-height: 380px;
+    }
+
+    .contact-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin: 0px 20px;
+    }
+
+    .contact-title {
+        font-size: 2.3rem;
+        letter-spacing: 0.6px;
+        text-align: center;
+    }
+
+    .contact-text p {
+        font-size: 1.2rem;
+        letter-spacing: 0.6px;
+        margin-bottom: 10px;
+        line-height: 25px;
+        max-width: 100%;
+    }
+    
+
+    .contact-links {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .contact-link {
+        font-size: 1.7rem;
+    }
+
+    .contact-data {
+        gap: 20px;
+    }
+
+    .fa-phone, .fa-envelope {
+        font-size: 1.6rem;
+        transform: translate(0, -3px);
+    }
+
+    .project-text {
+        font-size: 1rem;
+        margin: 0 20px 20px 20px;
+        letter-spacing: 0.4px;
+        line-height: 22px;
+        line-break: anywhere;
+    
+    }
+
+    .pro-top {
+        margin: 10px 20px 15px 20px;
+    }
+
+    .pro-title{
+        font-size: 1.7rem;
+        letter-spacing: 0.6px;
+    }
+
+    .pro-link {
+        font-size: 1.7rem;
+    }
+
+    .pro-link img {
+        width: 30px;
+        height: 30px;
+        transform: translate(0, 2px);
+    }
+
+    .pro-links {
+        gap: 10px;
+    }
+}
