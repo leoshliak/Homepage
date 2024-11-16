@@ -18,6 +18,7 @@ body {
     font-size: 18px;
     font-family: "Inter";
     background-color: #F1F0ED;
+    overflow-x: hidden;
 }
 
 header {
@@ -73,6 +74,8 @@ main {
     z-index: 0;
 }
 
+
+
 .des-title {
     font-size: 2.3rem;
     font-family: 'Capirolla';
@@ -125,13 +128,21 @@ a {
     font-size: 3rem;
     margin-bottom: 40px;
     letter-spacing: 0.8px;
+    opacity: 0;
+    transform: translate(0px, 120%);
+    transition: all 0.8s;
+}
+
+.work-title.s-active {
+    opacity: 1;
+    transform: translate(0px, 0px);
 }
 
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .project {
@@ -139,7 +150,14 @@ a {
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 0px 12px 5px #0000002e;
-    transition: all 0.4s;
+    transition: all 1.2s;
+    opacity: 0.3;
+    transform: translate(0px, 20%);
+}
+
+.project.s-active {
+    opacity: 1;
+    transform: translate(0px, 0px);
 }
 
 .project-img {
@@ -164,11 +182,11 @@ a {
 .pro-links {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
 }
 
 .pro-link {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     transition: all 0.3s;
 }
 
@@ -187,11 +205,6 @@ a {
 
 .pro-link:hover {
   transform: scale(1.05);
-}
-
-.project:hover {
-    transform: scale(1.01);
-    box-shadow: 0 10px 40px #757667;
 }
 
 footer {
@@ -225,6 +238,14 @@ footer {
     font-size: 2.3rem;
     letter-spacing: 0.6px;
     font-family: 'Capirolla';
+    opacity: 0.2;
+    transform: translate(-150%, 0px);
+    transition: all 0.8s ease-out 0.6s;
+}
+
+.contact-title.s-active {
+   opacity: 1;
+   transform: translate(0px, 0px);
 }
 
 .contact-data {
@@ -234,24 +255,61 @@ footer {
     gap: 10px;
 }
 
-.contact-text p {
+.contact-data p {
     font-size: 1rem;
     letter-spacing: 0.4px;
     margin-bottom: 10px;
     line-height: 25px;
     max-width: 400px;
+    opacity: 0;
+    transform: translate(-120%, 0px);
 }
+
+.contact-data.s-active p:nth-child(1) {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    transition: all 0.8s  0.9s;
+}
+
+.contact-data.s-active p:nth-child(2) {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    transition: all 0.8s  1.3s;
+}
+
+.contact-data.s-active .phone {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    transition: all 0.8s  1.6s;
+}
+
+.contact-data.s-active .email {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    transition: all 0.8s  1.8s;
+}
+
 
 .contact-links {
     display: flex;
     justify-content: left;
     gap: 15px;
+    opacity: 0;
+    transform: translate(-100%);
+    transition: all 0.8s 2.1s;
+}
+
+.contact-links.s-active {
+    opacity: 1;
+    transform: translate(0px, 0px);
 }
 
 .phone, .email {
     display: flex;
     align-items: center;
     gap: 7px;
+    opacity: 0;
+    transform: translate(-110%, 0px);
 }
 
 .fa-phone, .fa-envelope {
@@ -292,6 +350,89 @@ footer {
         max-width: 500px;
     }
 }
+
+@media screen and (min-width: 1000px) {
+   .profile-pic.s-active {
+        transition: all 0.3s;
+        animation: 1s anim1 forwards ease-out;
+    }
+
+    .description.s-active {
+        animation: 1s anim2 forwards ease-out 0.65s;
+        transform: translate(700px, 0px);
+        opacity: 0;
+    }
+
+    .name {
+        overflow: hidden; 
+        border-right: 5px solid #fff;
+        white-space: nowrap; 
+        margin: 0 auto; 
+        opacity: 0;
+        animation: 
+    typing 1.5s steps(40, end) forwards 1.5s,
+    blink-caret 1s step-end forwards;
+    }
+
+
+    @keyframes anim1 {
+        from {
+            transform: translate(0px, -1000px);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0.4;
+        }
+
+        to{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes anim2 {
+        from {
+            transform: translate(1000px, 0px);
+            opacity: 0;
+        }
+
+        50% {
+           opacity: 0.6;
+        }
+
+        to{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes typing {
+        from { 
+            width: 0%;
+            opacity: 0;
+        }
+         
+        5% {
+            opacity: 0.5;
+        }
+    
+        10% {
+            opacity: 1;
+        }
+    
+        to { 
+            opacity: 1;
+            width: 100% 
+        }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #fff; }
+      }  
+}
+ 
 
 @media screen and (max-width: 1000px)  {
     header{
@@ -441,7 +582,7 @@ footer {
     }
 
     .pro-link {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         transition: all 0.3s;
     }
 
@@ -486,6 +627,55 @@ footer {
     }
 }
 
+@media screen and (min-width: 525px) {
+    .image2 {
+       opacity: 0;
+       transform: translate(100%, 0px);
+       transition: all 1.2s;
+    }
+
+    .image2.s-active {
+        opacity: 1;
+         transform: translate(0px, 0px);
+    }
+}
+
+@media screen and (min-width: 525px) and (max-width: 1000px) {
+    .description {
+        transition: all 0.8s;
+        opacity: 0;
+       /* transform: scale(0.2);*/
+       transform: translate(0px, -50%);
+    }
+
+    .description.s-active {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+
+    .name2 {
+        opacity: 0;
+        bottom: 40px;
+        transition: all 0.8s 0.8s;
+    }
+
+    .name2.s-active {
+        opacity: 1;
+       bottom: 55px;
+    }
+
+    .top-links {
+        opacity: 0;
+        transform: translate(60%, 0px);
+        transition: all 0.8s 1.2s;
+    }
+
+    .description.s-active .top-links{
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
 @media screen and (max-width: 525px) {
     .des-text img {
         display: none;
@@ -502,6 +692,14 @@ footer {
         padding: 10px 25px;
         justify-content: unset;
         gap: 0px;
+        opacity: 0;
+        transform: translate(100%, 0px);
+        transition: all 0.8s ease-out 0.8s;
+    }
+
+    .description.s-active {
+        opacity: 1;
+        transform: translate(0px, 0px);
     }
 
     .des-text {
@@ -521,14 +719,18 @@ footer {
         display: flex;
         justify-content: center;
         gap: 20px;
+        opacity: 0;
+        transform: translate(60%, 0px);
+        transition: all 0.8s 1.2s;
+    }
+
+    .description.s-active .top-links{
+        opacity: 1;
+        transform: translate(0px, 0px);
     }
 
     .top-link {
         font-size: 1.6rem;
-    }
-
-    .profile-pic {
-        display: inline;
     }
 
     .about-container {
@@ -538,7 +740,17 @@ footer {
 
     .profile-pic {
         width: 90%;
+        display: inline;
+        transition: all 0.8s ease-out;
+        opacity: 0;
+        transform: translate(-100%, 0px);
     }
+
+    .profile-pic.s-active {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+
     header {
         background: linear-gradient(345deg, #f1f0ed 70%,  #0b98b8 10%);
     }
@@ -547,7 +759,47 @@ footer {
         transform: translate(15px, -110px);
         font-size: 3rem;
         line-height: 52px;
-        max-width: 100px;
+        max-width: 250px;
+        overflow: hidden; 
+        border-right: 5px solid #fff;
+        margin: 0 auto; 
+        opacity: 0;
+    }
+
+    @keyframes typing {
+        from { 
+            width: 0%;
+            opacity: 0;
+            white-space: nowrap;
+        }
+         
+        5% {
+            opacity: 0.5;
+        }
+    
+        10% {
+            opacity: 1;
+        }
+
+        70% {
+            white-space: wrap;
+        }
+    
+        to { 
+            opacity: 1;
+            width: 100%; 
+        }
+      }
+      
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #fff; }
+      }  
+
+    .name.s-active {
+        animation: 
+    typing 1.5s steps(40, end) forwards 1.5s,
+    blink-caret 1s step-end forwards;
     }
 
     .contact {
@@ -560,7 +812,7 @@ footer {
     }
 
     .image1 {
-        min-height: 380px;
+        min-height: 360px;
     }
 
     .contact-text {
@@ -589,6 +841,8 @@ footer {
     .contact-links {
         justify-content: center;
         gap: 30px;
+        transform: translate(0px, 120%);
+        transition: all 0.8s 2.3s;
     }
 
     .contact-link {
