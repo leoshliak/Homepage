@@ -6,12 +6,12 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url(/fonts/Inter_24pt-Regular.ttf);
+    src: url(fonts/Inter_24pt-Regular.ttf);
 }
 
 @font-face {
     font-family: 'Capirolla';
-    src: url(/fonts/Capriola-Regular.ttf);
+    src: url(fonts/Capriola-Regular.ttf);
 }
 
 body {
