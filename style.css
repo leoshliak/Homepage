@@ -352,15 +352,19 @@ footer {
 }
 
 @media screen and (min-width: 1000px) {
-   .profile-pic.s-active {
+
+    .profile-pic {
+        transform: translate(0px, -1000px);
+            opacity: 0;
         transition: all 0.3s;
         animation: 1s anim1 forwards ease-out;
     }
 
-    .description.s-active {
-        animation: 1s anim2 forwards ease-out 0.65s;
-        transform: translate(700px, 0px);
+
+    .description {
+        transform: translate(1000px, 0px);
         opacity: 0;
+        animation: 1s anim2 forwards ease-out 0.65s;
     }
 
     .name {
@@ -370,7 +374,7 @@ footer {
         margin: 0 auto; 
         opacity: 0;
         animation: 
-    typing 1.5s steps(40, end) forwards 1.5s,
+    typing 1.5s steps(40, end) forwards 2s,
     blink-caret 1s step-end forwards;
     }
 
